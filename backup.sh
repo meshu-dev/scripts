@@ -20,10 +20,11 @@ generate_db_backup() {
   DATABASE="${!1}"
   echo "Backing up $DATABASE database"
 
-  DB_FILE_PATH="$BACKUP_OUTPUT_PATH/$DATE-$DATABASE.sql"
+  FILENAME="$DATE-$DATABASE.sql"
+  DB_FILE_PATH="$BACKUP_OUTPUT_PATH/$FILENAME"
 
   mysqldump --defaults-file=$DB_CONFIG_PATH $DATABASE > $DB_FILE_PATH
-  s3cmd put $DB_FILE_PATH $S3_BUCKET_URL
+  s3cmd put $DB_FILE_PATH "$S3_BUCKET_URL/$FILENAME"
 }
 
 backup_databases
