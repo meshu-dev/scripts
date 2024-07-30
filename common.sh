@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source .env
+source $CURRENT_DIR/.env
 
 check_var() {
   if [[ -z "${!1}" ]]

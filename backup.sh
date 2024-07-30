@@ -1,6 +1,7 @@
 #!/bin/bash
 
-source common.sh
+CURRENT_DIR="$(dirname "${BASH_SOURCE[0]}")"
+source $CURRENT_DIR/common.sh
 
 check_var "DB_LIST"
 check_var "DB_CONFIG_PATH"
