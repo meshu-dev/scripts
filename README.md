@@ -11,7 +11,7 @@ cp .env.example .env
 Create the config.cnf file from the config.cnf.example file and fill in values.
 
 ```sh
-cp .env.example .env
+cp config.cnf.example config.cnf
 ```
 
 Install s3cmd
